@@ -1,0 +1,16 @@
+This is an example of using the Parse.com / Backbone.js adapter.
+
+It is an adaptation of the Backbone.js Todos application.  Originally,
+it saved to local storage.  This version runs via the Parse.com proxy
+and stores data at Parse.com.
+
+To use this:
+* Make sure Node.js and NPM are installed
+* Make sure coffee-script, express and restler are installed
+
+* copy config.coffee.example config.coffee
+* edit config.coffee to include your Parse.com App ID and Master Key
+* coffee proxy.coffee
+* Point your browser to http://localhost:3001 (or whatever port you have in config.coffee)
+
+ 

@@ -1,0 +1,5 @@
+module.exports =  
+  applicationID: 'YOUR APP ID' 
+  masterKey:    'YOUR MASTER KEY' 
+  apiPath:  '/data/'
+  port:     3001
