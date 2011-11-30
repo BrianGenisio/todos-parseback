@@ -4,6 +4,9 @@ It is an adaptation of the Backbone.js Todos application.  Originally,
 it saved to local storage.  This version runs via the Parse.com proxy
 and stores data at Parse.com.
 
+There is a blog series based on this code base.  You can read more
+about it here:  http://houseofbilz.com/archives/2011/11/07/going-mostly-server-less-with-backbone-js/
+
 To use this:
 * Make sure Node.js and NPM are installed
 * Make sure coffee-script, express and restler are installed
