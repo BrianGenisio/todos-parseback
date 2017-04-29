@@ -1,5 +1,7 @@
-(function() {
-  var __hasProp = Object.prototype.hasOwnProperty, __extends = function(child, parent) {
+((() => {
+  var __hasProp = Object.prototype.hasOwnProperty;
+
+  var __extends = (child, parent) => {
     for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; }
     function ctor() { this.constructor = child; }
     ctor.prototype = parent.prototype;
@@ -7,10 +9,11 @@
     child.__super__ = parent.prototype;
     return child;
   };
-  Backbone.ParseCollection = (function() {
+
+  Backbone.ParseCollection = ((() => {
     __extends(ParseCollection, Backbone.Collection);
-    function ParseCollection() {
-      ParseCollection.__super__.constructor.apply(this, arguments);
+    function ParseCollection(...args) {
+      ParseCollection.__super__.constructor.apply(this, args);
     }
     ParseCollection.prototype.parse = function(resp, xhr) {
       var data;
@@ -25,10 +28,10 @@
       return ParseCollection.__super__.fetch.apply(this, arguments);
     };
     return ParseCollection;
-  })();
-  Backbone.ParseModel = (function() {
+  }))();
+  Backbone.ParseModel = ((() => {
     __extends(ParseModel, Backbone.Model);
-    ParseModel.prototype.setId = function(data) {
+    ParseModel.prototype.setId = data => {
       if (!data.id) {
         data.id = data.objectId;
       }
@@ -41,13 +44,13 @@
     ParseModel.prototype.parse = function(resp, xhr) {
       return this.setId(ParseModel.__super__.parse.apply(this, arguments));
     };
-    ParseModel.prototype.toJSON = function() {
+    ParseModel.prototype.toJSON = function(...args) {
       var result;
-      result = ParseModel.__super__.toJSON.apply(this, arguments);
+      result = ParseModel.__super__.toJSON.apply(this, args);
       delete result.createdAt;
       delete result.updatedAt;
       return result;
     };
     return ParseModel;
-  })();
-}).call(this);
+  }))();
+})).call(this);
